@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Array - Nabila Nasa Juliani</title>
+</head>
+<body>
+  <h1>Praktik Array JavaScript</h1>
+  <pre id="hasil"></pre>
+
+  <script>
+    let out = "";
+
+    // 1. Array Sederhana
+    const buah = ["apel", "jeruk", "mangga"];
+    out += "1. Array Sederhana\n";
+    out += "Isi: " + buah.join(", ") + "\n";
+    out += "Jumlah: " + buah.length + "\n\n";
+
+    // 2. Array Angka
+    const angka = [10, 20, 30, 40, 50];
+    const total = angka.reduce((a, b) => a + b, 0);
+    out += "2. Array Angka\n";
+    out += "Total: " + total + ", Rata-rata: " + total / angka.length + "\n\n";
+
+    // 3. Array Perulangan
+    out += "3. Array Perulangan\n";
+    for (let i = 0; i < buah.length; i++) {
+      out += (i + 1) + ". " + buah[i] + "\n";
+    }
+    out += "\n";
+
+    // 4. Cari Data
+    out += "4. Cari Data\n";
+    out += "Ada 'jeruk'? " + buah.includes("jeruk") + "\n";
+    out += "Index 'mangga': " + buah.indexOf("mangga") + "\n\n";
+
+    // 5. Olah Nilai
+    const nilai = [85, 70, 90, 60, 75];
+    const lulus = nilai.filter(n => n >= 75);
+    out += "5. Olah Nilai\n";
+    out += "Tertinggi: " + Math.max(...nilai) + "\n";
+    out += "Terendah: " + Math.min(...nilai) + "\n";
+    out += "Yang lulus (>=75): " + lulus.join(", ") + "\n";
+
+    document.getElementById("hasil").innerText = out;
+  </script>
+</body>
+</html>
